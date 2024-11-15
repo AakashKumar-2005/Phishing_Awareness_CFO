@@ -6,94 +6,95 @@
     <title>Phishing Awareness Exercise</title>
     <style>
         /* General Styling */
-        body { 
-            font-family: Arial, sans-serif; 
-            color: #333333; 
-            text-align: center; 
-            padding: 50px; 
-            margin: 0;
-            background: linear-gradient(135deg, #f05053, #e1eec3); /* Attractive background gradient */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        
-        /* Container Styling */
-        .container { 
-            max-width: 600px; 
-            background: rgba(255, 255, 255, 0.9); /* Slightly translucent white */
-            border-radius: 12px; 
-            padding: 20px 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1.5s ease;
-        }
+body { 
+    font-family: Arial, sans-serif; 
+    color: #333333; 
+    text-align: center; 
+    padding: 50px; 
+    margin: 0;
+    background: linear-gradient(135deg, #f05053, #e1eec3); /* Attractive background gradient */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
 
-        /* Title and Subtitle */
-        .title { 
-            font-size: 28px; 
-            font-weight: bold; 
-            color: #cc0000;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            animation: slideIn 1.5s ease forwards;
-        }
+/* Container Styling */
+.container { 
+    max-width: 600px; 
+    background: rgba(255, 255, 255, 0.9); /* Slightly translucent white */
+    border-radius: 12px; 
+    padding: 20px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease;
+}
 
-        .subtitle { 
-            font-size: 20px; 
-            color: #0073e6; 
-            margin-top: 10px; 
-            margin-bottom: 20px;
-            animation: slideIn 1.8s ease forwards;
-        }
+/* Title and Subtitle */
+.title { 
+    font-size: 28px; 
+    font-weight: bold; 
+    color: #cc0000; /* Dark red */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    animation: slideIn 1.5s ease forwards;
+}
 
-        /* Content and List Styling */
-        .content { 
-            font-size: 16px; 
-            text-align: left;
-            animation: fadeIn 2s ease;
-        }
+.subtitle { 
+    font-size: 20px; 
+    color: #0073e6; /* Blue */
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    animation: slideIn 1.8s ease forwards;
+}
 
-        ul { 
-            list-style: none; 
-            padding: 0;
-            animation: fadeIn 2.5s ease;
-        }
+/* Content and List Styling */
+.content { 
+    font-size: 16px; 
+    text-align: left;
+    animation: fadeIn 2s ease;
+}
 
-        ul li {
-            background: #cc0000;
-            color: #ffffff;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 8px;
-            transition: transform 0.3s ease, background 0.3s ease;
-            font-weight: bold;
-        }
+ul { 
+    list-style: none; 
+    padding: 0;
+    animation: fadeIn 2.5s ease;
+}
 
-        ul li:hover {
-            transform: scale(1.05);
-            background: #ff5e5e; /* Lighter red on hover */
-        }
+ul li {
+    background: #cc0000; /* Dark red */
+    color: #ffffff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    font-weight: bold;
+}
 
-        /* Keyframes for Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
+ul li:hover {
+    transform: scale(1.05);
+    background: #ff5e5e; /* Lighter red on hover */
+}
 
-        @keyframes slideIn {
-            0% { opacity: 0; transform: translateY(-30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            body { padding: 20px; }
-            .title { font-size: 24px; }
-            .subtitle { font-size: 18px; }
-            ul li { font-size: 14px; }
-        }
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body { padding: 20px; }
+    .title { font-size: 24px; }
+    .subtitle { font-size: 18px; }
+    ul li { font-size: 14px; }
+}
+
     </style>
 </head>
 <body>
