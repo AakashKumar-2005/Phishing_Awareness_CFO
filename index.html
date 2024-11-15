@@ -5,111 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phishing Awareness Exercise</title>
     <style>
-     /* General Styling */
-body { 
-    font-family: Arial, sans-serif; 
-    color: #2e2e2e; /* Dark gray text */
-    text-align: center; 
-    padding: 50px; 
-    margin: 0;
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to blue gradient */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
+        /* General Styling */
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            background: linear-gradient(135deg, #f7f7f7, #ffffff); /* Subtle gradient */
+            color: #2e2e2e; /* Dark gray text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-/* Container Styling */
-.container { 
-    max-width: 600px; 
-    background: rgba(255, 255, 255, 0.95); /* Slightly translucent white */
-    border-radius: 12px; 
-    padding: 20px 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 1.5s ease;
-}
+        /* Container Styling */
+        .container { 
+            max-width: 600px; 
+            background: #ffffff; /* Solid white */
+            border-radius: 16px; 
+            padding: 30px 40px; 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            text-align: center;
+        }
 
-/* Title and Subtitle */
-.title { 
-    font-size: 28px; 
-    font-weight: bold; 
-    color: #ff6600; /* Bright orange */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    animation: slideIn 1.5s ease forwards;
-}
+        /* Title and Subtitle */
+        .title { 
+            font-size: 26px; 
+            font-weight: bold; 
+            color: #1a773d; /* Dark green */
+            margin-bottom: 10px; 
+        }
 
-.subtitle { 
-    font-size: 20px; 
-    color: #3399ff; /* Light blue */
-    margin-top: 10px; 
-    margin-bottom: 20px;
-    animation: slideIn 1.8s ease forwards;
-}
+        .subtitle { 
+            font-size: 18px; 
+            color: #008b8b; /* Teal */
+            margin-bottom: 20px; 
+        }
 
-/* Content and List Styling */
-.content { 
-    font-size: 16px; 
-    text-align: left;
-    animation: fadeIn 2s ease;
-}
+        /* Content and List Styling */
+        .content { 
+            font-size: 16px; 
+            text-align: left;
+        }
 
-ul { 
-    list-style: none; 
-    padding: 0;
-    animation: fadeIn 2.5s ease;
-}
+        ul { 
+            list-style: none; 
+            padding: 0;
+            margin: 20px 0;
+        }
 
-ul li {
-    background: #0066cc; /* Medium blue */
-    color: #ffffff;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 8px;
-    transition: transform 0.3s ease, background 0.3s ease;
-    font-weight: bold;
-}
+        ul li {
+            background: #e0f7f7; /* Light teal */
+            color: #005555; /* Darker teal */
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background 0.3s ease, color 0.3s ease;
+            text-align: left;
+        }
 
-ul li:hover {
-    transform: scale(1.05);
-    background: #3399ff; /* Lighter blue on hover */
-}
+        ul li:hover {
+            background: #008b8b; /* Darker teal */
+            color: #ffffff; /* White text */
+        }
 
-/* Keyframes for Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
+        /* Button Styling */
+        .btn { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            color: #ffffff; 
+            background: #1a773d; /* Dark green */
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
 
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateY(-30px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
+        .btn:hover {
+            background: #145a2b; /* Darker green on hover */
+        }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    body { padding: 20px; }
-    .title { font-size: 24px; }
-    .subtitle { font-size: 18px; }
-    ul li { font-size: 14px; }
-}
-
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            body { padding: 20px; }
+            .title { font-size: 22px; }
+            .subtitle { font-size: 16px; }
+            ul li { font-size: 14px; padding: 10px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <p class="title">You've Been Part of a Phishing Awareness Exercise!</p>
+        <p class="title">Phishing Awareness Exercise</p>
+        <p class="subtitle">Stay vigilant, stay secure!</p>
         <div class="content">
-            <p>This simulated phishing email was designed to help you identify phishing tactics and stay vigilant against real threats. Here are some key tips to help you avoid phishing attacks:</p>
+            <p>This exercise is designed to help you recognize phishing attempts. Follow these tips:</p>
             <ul>
-                <li><strong>Verify the Sender:</strong> Check the sender’s email address for spelling or unusual domains.</li>
-                <li><strong>Be Cautious of Misspelled URLs: Phishers often create URLs that mimic legitimate sites but include slight misspellings or extra characters</strong> </li>
-                <li><strong>Don’t Rely Solely on Display Names: Check the full email address,attackers often spoof the display name to look legitimate.</li>
-                <li><strong>Use Spam Filtering: Set your email client’s spam filter to high to catch more potential phishing emails.</li>
-                <li><strong>Report Suspicious Emails:</strong> If an email seems unusual, report it to the IT or security team.</li>
+                <li><strong>Verify the Sender:</strong> Check email addresses carefully.</li>
+                <li><strong>Inspect Links:</strong> Hover over links to see where they lead.</li>
+                <li><strong>Beware of Urgency:</strong> Phishing emails often rush you to act.</li>
+                <li><strong>Avoid Unknown Attachments:</strong> Don’t open unexpected files.</li>
+                <li><strong>Report Suspicious Emails:</strong> Notify your IT team immediately.</li>
             </ul>
-            <p>Stay vigilant and help us keep our organization secure!</p>
+            <a href="#" class="btn">Learn More</a>
         </div>
     </div>
 </body>
