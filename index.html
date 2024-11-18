@@ -4,95 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phishing Awareness Exercise</title>
-    <style>
+   <style>
         /* General Styling */
         body { 
-            font-family: 'Helvetica Neue', Arial, sans-serif; 
-            background: linear-gradient(135deg, #f7f7f7, #ffffff); /* Subtle gradient */
-            color: #2e2e2e; /* Dark gray text */
+            font-family: Arial, sans-serif; 
+            color: #333333; 
+            text-align: center; 
+            padding: 50px; 
             margin: 0;
-            padding: 0;
+            background: linear-gradient(135deg, #f05053, #e1eec3); /* Attractive background gradient */
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
         }
-
+        
         /* Container Styling */
         .container { 
             max-width: 600px; 
-            background: #ffffff; /* Solid white */
-            border-radius: 16px; 
-            padding: 30px 40px; 
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-            text-align: center;
+            background: rgba(255, 255, 255, 0.9); /* Slightly translucent white */
+            border-radius: 12px; 
+            padding: 20px 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease;
         }
 
         /* Title and Subtitle */
         .title { 
-            font-size: 26px; 
+            font-size: 28px; 
             font-weight: bold; 
-            color: #1a773d; /* Dark green */
-            margin-bottom: 10px; 
+            color: #cc0000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            animation: slideIn 1.5s ease forwards;
         }
 
         .subtitle { 
-            font-size: 18px; 
-            color: #008b8b; /* Teal */
-            margin-bottom: 20px; 
+            font-size: 20px; 
+            color: #0073e6; 
+            margin-top: 10px; 
+            margin-bottom: 20px;
+            animation: slideIn 1.8s ease forwards;
         }
 
         /* Content and List Styling */
         .content { 
             font-size: 16px; 
             text-align: left;
+            animation: fadeIn 2s ease;
         }
 
         ul { 
             list-style: none; 
             padding: 0;
-            margin: 20px 0;
+            animation: fadeIn 2.5s ease;
         }
 
         ul li {
-            background: #e0f7f7; /* Light teal */
-            color: #005555; /* Darker teal */
-            padding: 15px;
+            background: #cc0000;
+            color: #ffffff;
+            padding: 10px;
             margin: 10px 0;
-            border-radius: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background 0.3s ease;
             font-weight: bold;
-            transition: background 0.3s ease, color 0.3s ease;
-            text-align: left;
         }
 
         ul li:hover {
-            background: #008b8b; /* Darker teal */
-            color: #ffffff; /* White text */
+            transform: scale(1.05);
+            background: #ff5e5e; /* Lighter red on hover */
         }
 
-        /* Button Styling */
-        .btn { 
-            display: inline-block; 
-            padding: 10px 20px; 
-            color: #ffffff; 
-            background: #1a773d; /* Dark green */
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            margin-top: 20px;
-            transition: background 0.3s ease;
+        /* Keyframes for Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        .btn:hover {
-            background: #145a2b; /* Darker green on hover */
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive Design */
         @media (max-width: 600px) {
             body { padding: 20px; }
-            .title { font-size: 22px; }
-            .subtitle { font-size: 16px; }
-            ul li { font-size: 14px; padding: 10px; }
+            .title { font-size: 24px; }
+            .subtitle { font-size: 18px; }
+            ul li { font-size: 14px; }
         }
     </style>
 </head>
