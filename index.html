@@ -54,13 +54,8 @@
         /* Fixed background for message */
         .message::before {
             content: ''; /* Empty content to create a pseudo-element */
-            position:absolute; /* Use fixed positioning to ensure the background stays in place */
-            top: 0;
-            left: 0;
-            width: 100vw; /* Ensure it covers the entire viewport width */
-            height: 100vh; /* Ensure it covers the entire viewport height */
-            background: url('warn1.gif') no-repeat center center;
-            background-size: cover; /* Ensure the background stretches to cover the full screen */
+            position: fixed; /* Use fixed positioning to ensure the background stays in place */
+            /* Ensure it covers the entire viewport height */
             z-index: -1; /* Ensure the background stays behind the text */
         }
 
@@ -79,12 +74,14 @@
 
         /* Instructions section */
         .instructions {
-            display: none;
+            display:none;
             text-align: center;
             font-size: 25px;
             color: white;
-            background: url('your-instruction-gif.gif') no-repeat center center;
+            background: url('warn1.gif') no-repeat center center;
             background-size: cover;
+            width: 100vw;
+            height: 100vh;
             padding: 20px;
             border-radius: 10px;
             animation: slideIn 4s forwards;
