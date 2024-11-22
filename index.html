@@ -1,115 +1,173 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phishing Awareness Exercise</title>
+    <title>Phishing Awareness</title>
     <style>
-        /* General Styling */
-        body { 
-            font-family: Arial, sans-serif; 
-            color: #333333; 
-            text-align: center; 
-            padding: 50px; 
+        body, html {
             margin: 0;
-            background: linear-gradient(135deg, #f05053, #e1eec3); /* Attractive background gradient */
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-        }
-        
-        /* Container Styling */
-        .container { 
-            max-width: 600px; 
-            background: rgba(255, 255, 255, 0.9); /* Slightly translucent white */
-            border-radius: 12px; 
-            padding: 20px 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1.5s ease;
+            background-color: black;
+            color: white;
         }
 
-        /* Title and Subtitle */
-        .title { 
-            font-size: 28px; 
-            font-weight: bold; 
-            color: #cc0000;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            animation: slideIn 1.5s ease forwards;
+        /* Full-screen danger background */
+        .danger-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('warn.gif') no-repeat center center;
+            background-size: cover; /* Ensure the background stretches to cover the full screen */
+            z-index: -1; /* Ensure it stays behind other elements */
+            animation: fadeInOut 4s forwards;
         }
 
-        .subtitle { 
-            font-size: 20px; 
-            color: #0073e6; 
-            margin-top: 10px; 
-            margin-bottom: 20px;
-            animation: slideIn 1.8s ease forwards;
-        }
-
-        /* Content and List Styling */
-        .content { 
-            font-size: 16px; 
-            text-align: left;
-            animation: fadeIn 2s ease;
-        }
-
-        ul { 
-            list-style: none; 
-            padding: 0;
-            animation: fadeIn 2.5s ease;
-        }
-
-        ul li {
-            background: #cc0000;
-            color: #ffffff;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 8px;
-            transition: transform 0.3s ease, background 0.3s ease;
+        /* Message container */
+        .message-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 40px;
             font-weight: bold;
+            color: red;
+            z-index: 10;
         }
 
-        ul li:hover {
-            transform: scale(1.05);
-            background: #ff5e5e; /* Lighter red on hover */
+        .message {
+            display: none;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 10;
+            animation: fadeIn 2s forwards;
         }
 
-        /* Keyframes for Animations */
+        /* Fixed background for message */
+        .message::before {
+            content: ''; /* Empty content to create a pseudo-element */
+            position:absolute; /* Use fixed positioning to ensure the background stays in place */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Ensure it covers the entire viewport width */
+            height: 100vh; /* Ensure it covers the entire viewport height */
+            background: url('warn1.gif') no-repeat center center;
+            background-size: cover; /* Ensure the background stretches to cover the full screen */
+            z-index: -1; /* Ensure the background stays behind the text */
+        }
+
+        /* Animation for message fading in */
         @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
+        /* Animation for danger background fading in and out */
+        @keyframes fadeInOut {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Instructions section */
+        .instructions {
+            display: none;
+            text-align: center;
+            font-size: 25px;
+            color: white;
+            background: url('your-instruction-gif.gif') no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+            border-radius: 10px;
+            animation: slideIn 4s forwards;
+        }
+
+        /* Slide-in animation for instructions */
         @keyframes slideIn {
-            0% { opacity: 0; transform: translateY(-30px); }
-            100% { opacity: 1; transform: translateY(0); }
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            body { padding: 20px; }
-            .title { font-size: 24px; }
-            .subtitle { font-size: 18px; }
-            ul li { font-size: 14px; }
+        /* Instruction elements that will appear one by one */
+        .instruction-item {
+            display: none;
+            font-size: 25px;
+            margin: 15px 0;
+            animation: fadeInInstructions 1s forwards;
+        }
+
+        @keyframes fadeInInstructions {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .highlight {
+            color: red;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <p class="title">You've Been Part of a Phishing Awareness Exercise!</p>
-        <div class="content">
-            <p>This simulated phishing email was designed to help you identify phishing tactics and stay vigilant against real threats. Here are some key tips to help you avoid phishing attacks:</p>
-            <ul><li><strong>Verify the Sender:</strong> Check email addresses carefully.</li>
-                <li><strong>Inspect Links:</strong> Move the cursor over links to see where they lead.</li>
-                <li><strong>Beware of Urgency:</strong> Phishing emails often rush you to act.</li>
-                <li><strong>Avoid Opening Unknown Attachments:</strong> Don’t open unexpected files.</li>
-                <li><strong>Report Suspicious Emails:</strong> Notify your IT team immediately.</li>
-            </ul>
-            <p>Stay vigilant and help us keep our organization secure!</p>
+
+    <!-- Background container for danger -->
+    <div class="danger-bg"></div>
+
+    <!-- Message container for the displayed text -->
+    <div class="message-container">
+        <div class="message" id="message1">
+            YAAAY... Your account is hacked!
+        </div>
+
+        <div class="message" id="message2">
+            Just kidding... this is an exercise for phishing awareness!
         </div>
     </div>
+
+    <!-- Instructions section -->
+    <div class="instructions" id="instructions">
+        <div class="instruction-item" id="instruction1">1. <span class="highlight">Do not click on suspicious links!</span></div>
+        <div class="instruction-item" id="instruction2">2. <span class="highlight">Verify the sender’s email address before opening emails.</span></div>
+        <div class="instruction-item" id="instruction3">3. <span class="highlight">Avoid downloading attachments from unknown sources.</span></div>
+        <div class="instruction-item" id="instruction4">4. <span class="highlight">Report phishing attempts immediately!</span></div>
+    </div>
+
+    <script>
+        window.onload = () => {
+            // Show first message (Your account is hacked)
+            setTimeout(() => {
+                document.getElementById('message1').style.display = 'block';
+            }, 4000); // After 4s
+
+            // Show second message (Just kidding...)
+            setTimeout(() => {
+                document.getElementById('message1').style.display = 'none';
+                document.getElementById('message2').style.display = 'block';
+            }, 8000); // After 8s
+
+            // Show instructions with animation
+            setTimeout(() => {
+                document.getElementById('message2').style.display = 'none';
+                document.getElementById('instructions').style.display = 'block';
+                showInstructions();
+            }, 12000); // After 12s
+
+        }
+
+        let instructionIndex = 0;
+        function showInstructions() {
+            if (instructionIndex < 4) {
+                document.getElementById('instruction' + (instructionIndex + 1)).style.display = 'block';
+                instructionIndex++;
+                setTimeout(showInstructions, 2000); // Show each instruction after 2s
+            }
+        }
+    </script>
 </body>
 </html>
