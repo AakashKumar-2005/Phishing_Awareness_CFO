@@ -144,20 +144,20 @@
             // Show first message (Your account is hacked)
             setTimeout(() => {
                 document.getElementById('message1').style.display = 'block';
-            }, 4000); // After 4s
+            }, 2000); // After 4s
 
             // Show second message (Just kidding...)
             setTimeout(() => {
                 document.getElementById('message1').style.display = 'none';
                 document.getElementById('message2').style.display = 'block';
-            }, 8000); // After 8s
+            }, 4000); // After 8s
 
             // Show instructions with animation
             setTimeout(() => {
                 document.getElementById('message2').style.display = 'none';
                 document.getElementById('instructions').style.display = 'block';
                 showInstructions();
-            }, 12000); // After 12s
+            }, 8000); // After 12s
 
         }
 
