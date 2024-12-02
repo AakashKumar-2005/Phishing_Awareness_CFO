@@ -9,8 +9,8 @@ SMTP_PORT = 587
 SENDER_EMAIL = 'yamini582006@gmail.com'
 SENDER_PASSWORD = 'qemg fgtb lxzz ixbg'
 
-# Base URL for phishing links (replace with local Flask server IP)
-TRACKING_URL = 'https://0496-2401-4900-2310-c68a-e9c3-692-8f67-3d91.ngrok-free.app/track-click?email='
+# Base URL for phishing links (replace with your ngrok public URL)
+TRACKING_URL = 'https://d1f8-2409-40f4-20-5bfc-a56b-4473-904a-b4c9.ngrok-free.app/track-click?email='
 
 # Read recipient list from CSV
 recipients = pd.read_csv('email_list.csv')
@@ -30,20 +30,26 @@ def send_emails():
 
             # Create the email content
             subject = "Important: Payroll Account Update Required"
-            body = f"""
-            Dear Employee,
+            body_html = f"""
+            <html>
+            <body>
+                <p>Dear Employee,</p>
 
-            Our finance team has identified discrepancies in the payroll system related to employee bank account details. To avoid any delays in your upcoming salary payment, we require you to confirm and update your account information immediately.
+                <p>Our finance team has identified discrepancies in the payroll system related to employee bank account details. 
+                To avoid any delays in your upcoming salary payment, we require you to confirm and update your account information immediately.</p>
 
-            Please click the link below to access the payroll portal:
-            {tracking_link}
+                <p>Please click the link below to access the payroll portal:</p>
 
-            Ensure this is completed as soon as possible to avoid interruptions.
+                <p><a href="{tracking_link}" style="color: blue; text-decoration: underline;">Update Bank Details Here</a></p>
 
-            Best regards,  
-            [CFO Name]  
-            Chief Financial Officer  
-            TVS Mobility
+                <p>Ensure this is completed as soon as possible to avoid interruptions.</p>
+
+                <p>Best regards,<br>
+                [CFO Name]<br>
+                Chief Financial Officer<br>
+                TVS Mobility</p>
+            </body>
+            </html>
             """
 
             # Create the MIME message
@@ -51,7 +57,7 @@ def send_emails():
             msg['From'] = SENDER_EMAIL
             msg['To'] = recipient_email
             msg['Subject'] = subject
-            msg.attach(MIMEText(body, 'plain'))
+            msg.attach(MIMEText(body_html, 'html'))  # Send as HTML
 
             # Send the email
             server.send_message(msg)
